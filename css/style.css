@@ -1,0 +1,14 @@
+body {
+  margin: 20px;
+  padding: 0px;
+  min-width: 303px;
+}
+.container {
+  width: auto;
+}
+.navbar {
+  margin: auto;
+}
+.btnRight {
+  margin-right: 10%;
+}
