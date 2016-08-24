@@ -19,8 +19,10 @@
 
 
 
-            <ul ng-model="categorySort" class="dropdown-menu">
-              <li><a href="#/" ng-repeat="category in view.arrUnique()" ng-click="categorySort = '{{category}}'">{{category}}</a></li>
+            <ul class="dropdown-menu" ng-model="categoryUl">
+              <li  href="#/" ng-repeat="category in view.arrUnique()" ng-class="{active : isSelected(category)}">
+                <a ng-click="setMaster(category)" ng-model='category'>{{category}}</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -31,10 +33,10 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search" ng-model="search">
           </div>
-          <button type="submit" class="btn btn-default searchBtn"><i class="material-icons"></i></button>
+          <!-- <button type="submit" class="btn btn-default searchBtn"><i class="material-icons"></i></button> -->
         </form>
         <form class="navbar-form navbar-right">
-        <a type="submit" class="btn btn-default navbar-right btnRight">Checkout</a>
+        <a href="/#/cart" type="submit" class="btn btn-default navbar-right btnRight checkout">Checkout | products:  <span>{{revisedTotal}}</span></a>
         </form>
       </div><!-- /.navbar-collapse -->
     <!-- </div> -->
@@ -52,35 +54,55 @@
           <th class = "col-xs-3">tea</th>
           <th class = "col-xs-5">Information</th>
           <th class = "col-xs-2">
-            <label style="margin: 0px;" class="form-inline" for="sortBy">Quantity</label>
-            <select class="form-inline" ng-model="sortBy">
-              <option value="None">-- Select --</option>
-              <option value="Name">Name</option>
-              <option value="Address">Address</option>
-            </select>
+
           </th>
           <th class = "col-xs-2">
-            <button type="submit" class="btn btn-default navbar-right btnRight">Add To Bag</button>
+
           </th>
         </tr>
       </thead>
-      <tbody ng-repeat="product in view.products | orderBy:categorySort:true | filter: search">
+      <tbody ng-repeat="product in view.products | orderBy: 'name' | filter:{categories:selected} | filter: search">
         <tr>
           <td><img ng-src="{{product.imageUrl}}"/></td>
 
           <td>
             <h3 ng-model="name">{{product.name}}</h3><br>
-            <p><strong>Price:</strong> {{product.price}}</p>
+            <p><strong>Price:</strong> {{product.price/100 | currency}}</p>
             <p><strong>Caffeine Scale:</strong> {{product.caffeineScale}}</p>
             <p><strong>Ingredients:</strong> {{product.ingredients}}</p>
             <p><strong>Rating:</strong> {{product.rating}}</p>
-            <p><strong>In Stock?</strong> {{product.inStock}}</p>
+            <!-- <p><strong>In stock:</strong> {{product.inStock}}</p> -->
+            <p ng-if="product.inStock">
+              <strong>In Stock?</strong> Yes
+            </p>
+            <p ng-if="!product.inStock">
+              <strong>In Stock?</strong> No
+            </p>
             <p><strong>Categories:</strong></p>
-              <ul ng-model="popFizz" ng-repeat="category in product.categories">
-                <li class="categoryItem">{{category}}</li>
+              <ul ng-model="category" ng-repeat="category in product.categories">
+                <li class="categoryItem" ng-model="categories">{{category}}</li>
 
               </ul>
               <a href="/#/" >{{ view.arrNotU() }}</a>
+          </td>
+          <td>
+            <label style="margin: 0px;" class="form-inline">Quantity</label>
+            <select class="form-inline" ng-model="quantity">
+              <option value="None">-- Select --</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+          <td>
+            <button type="submit" class="btn btn-default navbar-right btnRight" ng-click='add(product, quantity);'>Add To Bag</button>
           </td>
         </tr>
         <tr>
@@ -94,8 +116,5 @@
 </div>
 
 <div class="row">
-
-  <!-- add content here -->
-  <div>{{view.products}}</div>
   </div>
 </div>

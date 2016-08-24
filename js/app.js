@@ -6,13 +6,11 @@ app.config(function($routeProvider) {
     templateUrl : "partials/products.html",
     controller : "ProductsController"
   })
-  .when("/red", {
-    templateUrl : "red.html"
+  .when("/cart", {
+    templateUrl : "partials/cart.html",
+    controller : "CartController"
   })
-  .when("/green", {
-    templateUrl : "green.html"
-  })
-  .when("/blue", {
-    templateUrl : "blue.html"
-  });
+  .otherwise({
+  redirectTo: '/store'
+});
 });
