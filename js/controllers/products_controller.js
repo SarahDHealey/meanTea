@@ -1,5 +1,7 @@
 app.controller('ProductsController', function($scope, ProductsFactory, CartFactory){
 
+  
+
 
   $scope.view = {};
   $scope.view.products = ProductsFactory.getAllProducts;
@@ -11,7 +13,6 @@ app.controller('ProductsController', function($scope, ProductsFactory, CartFacto
   $scope.add = function(product, quantity) {
     quantity = quantity || 1;
     CartFactory.add(product, quantity);
-    CartFactory.checkTotal(quantity);
   }
 
   $scope.setMaster = function(category) {

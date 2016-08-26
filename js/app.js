@@ -1,6 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 app.config(function($routeProvider) {
+  location.hash = '#/';
   $routeProvider
   .when("/", {
     templateUrl : "partials/products.html",
@@ -11,6 +12,6 @@ app.config(function($routeProvider) {
     controller : "CartController"
   })
   .otherwise({
-  redirectTo: '/store'
+  redirectTo: '/'
 });
 });

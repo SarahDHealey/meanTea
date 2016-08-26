@@ -29,6 +29,8 @@
 
 
 
+
+
         <form class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search" ng-model="search">
@@ -36,7 +38,7 @@
           <!-- <button type="submit" class="btn btn-default searchBtn"><i class="material-icons"></i></button> -->
         </form>
         <form class="navbar-form navbar-right">
-        <a href="/#/cart" type="submit" class="btn btn-default navbar-right btnRight checkout">Checkout | products:  <span>{{revisedTotal}}</span></a>
+        <a href="/#/cart" type="submit" class="btn btn-default navbar-right btnRight checkout" ng-click='orderTotal()'>Checkout | products:  <span>{{myCart.length}}</span></a>
         </form>
       </div><!-- /.navbar-collapse -->
     <!-- </div> -->
@@ -71,7 +73,6 @@
             <p><strong>Caffeine Scale:</strong> {{product.caffeineScale}}</p>
             <p><strong>Ingredients:</strong> {{product.ingredients}}</p>
             <p><strong>Rating:</strong> {{product.rating}}</p>
-            <!-- <p><strong>In stock:</strong> {{product.inStock}}</p> -->
             <p ng-if="product.inStock">
               <strong>In Stock?</strong> Yes
             </p>
@@ -80,10 +81,9 @@
             </p>
             <p><strong>Categories:</strong></p>
               <ul ng-model="category" ng-repeat="category in product.categories">
-                <li class="categoryItem" ng-model="categories">{{category}}</li>
+                <li class="categoryItem" ng-model="categoryList">{{category}}</li>
 
               </ul>
-              <a href="/#/" >{{ view.arrNotU() }}</a>
           </td>
           <td>
             <label style="margin: 0px;" class="form-inline">Quantity</label>

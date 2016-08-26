@@ -1,4 +1,7 @@
 
+
+<div>Order Total: {{view.cartFactory.runningTotal/100 | currency}}</div>
+
 <table class="table table-bordered">
   <tr>
     <th>Product</th>
@@ -37,9 +40,9 @@
         {{product.quantity * product.price / 100 | currency}}
       </td>
       <td>
-        <button ng-hide='isEditing' type="button" class="btn btn-warning" ng-click="isEditing = 'true'">Edit</button>
-        <button ng-show='isEditing' type="button" class="btn btn-warning" ng-click="isEditing ='false'">Update</button>
-        <button type="button" class="btn btn-danger" ng-click="removeRow(tea.name)">Remove</button>
+        <button ng-hide='isEditing' type="button" class="btn btn-warning" ng-click="isEditing = !isEditing">Edit</button>
+        <button ng-show='isEditing' type="button" class="btn btn-warning" ng-click="isEditing =!isEditing; view.update()">Update</button>
+        <button type="button" class="btn btn-danger" ng-click="removeRow(tea.name); view.delete(product); view.update()">Remove</button>
       </td>
     </tr>
   </tbody>
