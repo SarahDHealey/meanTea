@@ -9,5 +9,4 @@ app.controller('CartController', function($scope, ProductsFactory, CartFactory) 
   $scope.view.update = function(){
     CartFactory.orderTotal();
   }
-
 });

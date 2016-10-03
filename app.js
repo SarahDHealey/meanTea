@@ -12,6 +12,6 @@ app.config(function($routeProvider) {
     controller : "CartController"
   })
   .otherwise({
-  redirectTo: '/'
-});
+    redirectTo: '/'
+  });
 });

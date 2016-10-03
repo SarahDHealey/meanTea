@@ -2,6 +2,20 @@
 
 <div>Order Total: {{view.cartFactory.runningTotal/100 | currency}}</div>
 
+<form action="" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_VvbQRToFBFfrooB8dEHCtgA2"
+    data-amount="15.99"
+    data-name="Stripe.com"
+    data-description="Widget"
+    data-image="/img/documentation/checkout/marketplace.png"
+    data-locale="auto"
+    data-zip-code="true">
+  </script>
+</form>
+
+
 <table class="table table-bordered">
   <tr>
     <th>Product</th>

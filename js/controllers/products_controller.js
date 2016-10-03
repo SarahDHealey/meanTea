@@ -1,8 +1,5 @@
 app.controller('ProductsController', function($scope, ProductsFactory, CartFactory){
 
-  
-
-
   $scope.view = {};
   $scope.view.products = ProductsFactory.getAllProducts;
   $scope.view.myCart = CartFactory.myCart;
@@ -20,7 +17,7 @@ app.controller('ProductsController', function($scope, ProductsFactory, CartFacto
   }
 
   $scope.isSelected = function(category) {
-      return $scope.selected === category;
+    return $scope.selected === category;
   }
 
   $scope.view.arrUnique = function(){
