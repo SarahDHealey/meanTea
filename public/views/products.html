@@ -1,0 +1,120 @@
+<div class="row">
+<!-- search by category -->
+
+  <nav class="navbar navbar-default" style="background: white;">
+    <!-- <div class="container-fluid"> -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search by category: <span class="caret"></span></a>
+
+
+
+            <ul class="dropdown-menu" ng-model="categoryUl">
+              <li  href="#/" ng-repeat="category in view.arrUnique()" ng-class="{active : isSelected(category)}">
+                <a ng-click="setMaster(category)" ng-model='category'>{{category}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+
+
+
+
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="search">
+          </div>
+          <!-- <button type="submit" class="btn btn-default searchBtn"><i class="material-icons"></i></button> -->
+        </form>
+        <form class="navbar-form navbar-right">
+        <a href="/#/cart" type="submit" class="btn btn-default navbar-right btnRight checkout" ng-click='orderTotal()'>View cart | products:  <span>{{myCart.length}}</span></a>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    <!-- </div> -->
+    <!-- /.container-fluid -->
+  </nav>
+  </div>
+
+
+<!-- products table -->
+<div class="row">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class = "col-xs-3">tea</th>
+          <th class = "col-xs-5">Information</th>
+          <th class = "col-xs-2">
+
+          </th>
+          <th class = "col-xs-2">
+
+          </th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="product in view.products | orderBy: 'name' | filter:{categories:selected} | filter: search">
+        <tr>
+          <td><img ng-src="{{product.imageUrl}}"/></td>
+
+          <td>
+            <h3 ng-model="name">{{product.name}}</h3><br>
+            <p><strong>Price:</strong> {{product.price/100 | currency}}</p>
+            <p><strong>Caffeine Scale:</strong> {{product.caffeineScale}}</p>
+            <p><strong>Ingredients:</strong> {{product.ingredients}}</p>
+            <p><strong>Rating:</strong> {{product.rating}}</p>
+            <p ng-if="product.inStock">
+              <strong>In Stock?</strong> Yes
+            </p>
+            <p ng-if="!product.inStock">
+              <strong>In Stock?</strong> No
+            </p>
+            <p><strong>Categories:</strong></p>
+              <ul ng-model="category" ng-repeat="category in product.categories">
+                <li class="categoryItem" ng-model="categoryList">{{category}}</li>
+
+              </ul>
+          </td>
+          <td>
+            <label style="margin: 0px;" class="form-inline">Quantity</label>
+            <select class="form-inline" ng-model="quantity">
+              <option value="None">-- Select --</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+          <td>
+            <button type="submit" class="btn btn-default navbar-right btnRight" ng-click='add(product, quantity);'>Add To Bag</button>
+          </td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  </div>
+</div>
