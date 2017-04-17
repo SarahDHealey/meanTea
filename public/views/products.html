@@ -23,6 +23,9 @@
               <li  href="#/" ng-repeat="category in view.arrUnique()" ng-class="{active : isSelected(category)}">
                 <a ng-click="setMaster(category)" ng-model='category'>{{category}}</a>
               </li>
+              <li  href="#/">
+                <a ng-click="setMaster(category)" >all</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -53,8 +56,8 @@
     <table class="table">
       <thead>
         <tr>
-          <th class = "col-xs-3">tea</th>
-          <th class = "col-xs-5">Information</th>
+          <th class = "col-xs-3">Sunglasses</th>
+          <th class = "col-xs-5">Description</th>
           <th class = "col-xs-2">
 
           </th>
@@ -70,8 +73,7 @@
           <td>
             <h3 ng-model="name">{{product.name}}</h3><br>
             <p><strong>Price:</strong> {{product.price/100 | currency}}</p>
-            <p><strong>Caffeine Scale:</strong> {{product.caffeineScale}}</p>
-            <p><strong>Ingredients:</strong> {{product.ingredients}}</p>
+            <p><strong>Description:</strong> {{product.description}}</p>
             <p><strong>Rating:</strong> {{product.rating}}</p>
             <p ng-if="product.inStock">
               <strong>In Stock?</strong> Yes

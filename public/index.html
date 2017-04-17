@@ -2,29 +2,20 @@
 <html lang="en" ng-app='myApp'>
 <head>
   <meta charset="UTF-8">
-  <title>Mean Tea</title>
+  <title>Stunners</title>
   <!-- styles -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css"> -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="/css/style.css" rel="stylesheet" media="screen">
+  <link href="/stylesheets/style.css" rel="stylesheet" media="screen">
 </head>
   <body>
-    <!-- outside body container -->
-    <div class="container">
-
-      <!-- awesome row -->
-      <div class="row">
-        <div class="col-12-md">Guaranteed Awesome!</div>
-      </div>
-      <!-- title -->
-      <div class="row">
-        <h1>Mean Tea</h1>
-      </div>
+    <div class="container navbar-container">
       <div class="row">
         <!-- navbar -->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container-fluid">
+            <a class="navbar-brand text-white" href="/#/">Stunners</a>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -46,9 +37,17 @@
           </div><!-- /.container-fluid -->
         </nav>
       </div>
-      <div ng-view></div>
-
     </div>
+                    <!-- awesome row -->
+      <div class="container content-container">
+      <!-- title -->
+        <!--<div class="row">-->
+          <img class="banner" src="https://s3-us-west-1.amazonaws.com/sunglassesshop/sunglassimages/sunglassesbannersubtitle.png" alt="banner">
+        <!--</div>-->
+
+        <div ng-view></div>
+      </div>
+
     <!-- scripts -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> -->

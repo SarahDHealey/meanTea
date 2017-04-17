@@ -1,8 +1,60 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.container {
+  padding: 0;
 }
 
 a {
   color: #00B7FF;
 }
+
+img {
+    height: 250px;
+    width: 250px;
+    background-color: powderblue;
+}
+
+.navbar {
+  padding-top: 10px;
+  padding-left: 2%;
+  height: 70px;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+  margin: 0;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+.banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: 12% 3%;
+  margin-bottom: 1%;
+}
+
+/*img {
+  padding: 0;
+}*/
+div.container {
+  width: 100%;
+  margin: 0px;
+}
+
+.navbar-container {
+  height: 70px;
+}
+
+.content-container {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-top: 2%;
+}
+

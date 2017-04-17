@@ -15,7 +15,7 @@
         <h3>{{product.name}}</h3>
         <img src={{product.imageUrl}}>
         <h5><b>Price:</b> {{product.price / 100 | currency}}</h5>
-        <h5><b>Ingredients:</b> {{product.ingredients}}</h5>
+        <h5><b>description:</b> {{product.description}}</h5>
         <h5><b>Caffeine Scale:</b> {{product.caffeineScale}}</h5>
         <h5><b>Rating: </b>{{product.rating}}</h5>
       </td>
@@ -42,7 +42,7 @@
       <td>
         <button ng-hide='isEditing' type="button" class="btn btn-warning" ng-click="isEditing = !isEditing">Edit</button>
         <button ng-show='isEditing' type="button" class="btn btn-warning" ng-click="isEditing =!isEditing; view.update()">Update</button>
-        <button type="button" class="btn btn-danger" ng-click="removeRow(tea.name); view.delete(product); view.update()">Remove</button>
+        <button type="button" class="btn btn-danger" ng-click="removeRow(product.name); view.delete(product); view.update()">Remove</button>
       </td>
     </tr>
   </tbody>
