@@ -11,7 +11,5 @@ Dependencies: Postgres must already be installed.
  * Visit http://localhost:3000
 
 
-
-<!--![giphy of project: ](https://github.com/SarahDHealey/meanTea/tree/master/public/images)-->
-
-![Preview of Stunners App](/public/images/stunnersshoppreview.gif?raw=true "Optional Title")
+## Stunners Runthrough
+![Preview of Stunners App](/public/images/stunnersshoppreview.gif?raw=true)
