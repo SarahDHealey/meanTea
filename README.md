@@ -12,6 +12,6 @@ Dependencies: Postgres must already be installed.
 
 
 
-![Alt text](https://github.com/SarahDHealey/meanTea/tree/master/public/images)
+<!--![giphy of project: ](https://github.com/SarahDHealey/meanTea/tree/master/public/images)-->
 
-![Alt text](/public/images/stunnersshop.gif?raw=true "Optional Title")
+![Preview of Stunners App](/public/images/stunnersshoppreview.gif?raw=true "Optional Title")
