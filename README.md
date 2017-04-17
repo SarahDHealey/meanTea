@@ -12,4 +12,4 @@ Dependencies: Postgres must already be installed.
 
 
 
- ![alt text]("/public/images/stunnersshop.gif")
+[[https://github.com/sarahdhealey/meantea/blob/master/img/octocat.png|alt=octocat]]
