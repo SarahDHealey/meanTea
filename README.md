@@ -13,7 +13,3 @@ Dependencies: Postgres must already be installed.
 
 
  ![alt text]("/public/images/stunnersshop.gif")
-
-
-
- 
