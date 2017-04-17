@@ -12,4 +12,4 @@ Dependencies: Postgres must already be installed.
 
 
 
- ![alt text]("/public/images/stunnersshop.gif")
+![My image](sarahdhealey.github.com/meantea/public/images/stunnersshop.gif)
